@@ -3,10 +3,17 @@ import { motion } from 'framer-motion';
 
 const ExperienceItem = ({ title, role, duration, description }) => {
     return (
-        <div className="timeline-item">
-            <h3>{title}</h3>
-            <span className="role">{role} • {duration}</span>
-            <p>{description}</p>
+        <div className="relative pl-8 pb-12 border-l border-white/10 last:pb-0 group">
+            {/* Timeline Dot */}
+            <div className="absolute left-[-5px] top-1.5 w-[9px] h-[9px] rounded-full bg-background border-2 border-secondary group-hover:border-accent-start group-hover:bg-accent-start transition-colors duration-300 shadow-[0_0_0_4px_rgba(11,12,15,1)]"></div>
+
+            <div className="group-hover:translate-x-1 transition-transform duration-300">
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-accent-start transition-colors">{title}</h3>
+                <div className="text-sm font-medium text-accent-start mb-3">{role} • <span className="text-secondary">{duration}</span></div>
+                <p className="text-secondary text-sm leading-relaxed max-w-2xl">
+                    {description}
+                </p>
+            </div>
         </div>
     );
 };
@@ -14,49 +21,54 @@ const ExperienceItem = ({ title, role, duration, description }) => {
 const Experience = () => {
     return (
         <section id="experience">
+            <h2 className="mb-8">Experience</h2>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
+                className="ml-2"
             >
-                <h2>Experience</h2>
-
                 <ExperienceItem
                     title="National Assembly of Pakistan"
-                    role="Intern"
+                    role="AI Intern"
                     duration="June 2026 - Aug 2026"
-                    description="As an AI intern at the Parliament House of pakistan, I developed and fully deployed a bilingual transcribing system for their internal use to transcribe and translate the proceedings and session which helped the reporting cell save time and do tasks efficiently."
+                    description="Developed and deployed a bilingual transcribing system for internal use to transcribe and translate proceedings, significantly improving efficiency for the reporting cell."
                 />
 
                 <ExperienceItem
-                    title="CS Society, Sukkur IBA University"
+                    title="Propulsion (CS Society)"
                     role="PRC Lead"
                     duration="Nov 2024 - October 2025"
-                    description="I actively organize coding sessions, tech events, and peer mentorship programs to empower fellow students. Passionate about creating a collaborative ecosystem that blends innovation, learning, and real-world problem solving."
+                    description="Organized coding sessions, tech events, and peer mentorship programs. Fostered a collaborative ecosystem blending innovation and learning."
                 />
 
                 <ExperienceItem
                     title="NEP NIC Sukkur"
-                    role="Incubatee"
+                    role="Incubatee (Simper AI)"
                     duration="May 2024 - August 2024"
-                    description="Incubated at NIC Sukkur (NEP NIC), where I worked on my AI-based startup Simper - an intelligent online examination system aimed at revolutionizing assessment through automation, security, and accessibility. The incubation provided mentorship, technical guidance, and entrepreneurial support to transform my vision into a scalable solution."
+                    description="Incubated Simper AI, an intelligent online examination system. Leveraged mentorship and technical guidance to refine the product for scalability."
                 />
 
-                <div className="timeline-item">
-                    <h3>Sindh Educational Organization - SEO</h3>
-                    <span className="role">Member of Board of Directors • February 2025 - Present</span>
-                    <p>
-                        Promoted to the Board of Directors for my contributions, I now help guide SEO’s strategic decisions,
-                        support organizational planning, and contribute to initiatives that enhance student learning and
-                        educational outreach.
-                    </p>
-                    <span className="role">Public Relations Officer • February 2024 - Present</span>
-                    <p>
-                        As the PRO at SEO, I coordinate and host online sessions on education, scholarships, motivation,
-                        career counseling, and health. I invite distinguished speakers from Pakistan and abroad, moderate
-                        sessions on Zoom, and manage SEO’s public relations to strengthen outreach and impact.
-                    </p>
+                {/* Combined SEO entry */}
+                <div className="relative pl-8 pb-12 border-l border-white/10 last:pb-0 group">
+                    <div className="absolute left-[-5px] top-1.5 w-[9px] h-[9px] rounded-full bg-background border-2 border-secondary group-hover:border-accent-start group-hover:bg-accent-start transition-colors duration-300 shadow-[0_0_0_4px_rgba(11,12,15,1)]"></div>
+                    <div className="group-hover:translate-x-1 transition-transform duration-300">
+                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-accent-start transition-colors">Sindh Educational Organization (SEO)</h3>
+
+                        <div className="mb-4">
+                            <div className="text-sm font-medium text-accent-start mb-1">Member of Board of Directors • <span className="text-secondary">Feb 2025 - Present</span></div>
+                            <p className="text-secondary text-sm leading-relaxed max-w-2xl">
+                                Guiding strategic decisions, organizational planning, and educational outreach initiatives.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div className="text-sm font-medium text-accent-start mb-1">Public Relations Officer • <span className="text-secondary">Feb 2024 - Present</span></div>
+                            <p className="text-secondary text-sm leading-relaxed max-w-2xl">
+                                Coordinating online sessions on education and career counseling. Managing public relations and hosting distinguished speakers.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </motion.div>

@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaChevronDown, FaChevronUp, FaExternalLinkAlt } from 'react-icons/fa';
+import { FileText } from 'lucide-react';
 
-const ResearchCard = ({ meta, title, description, link, linkText, className = '' }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
+const ResearchCard = ({ meta, title, description, link, linkText }) => {
     return (
-        <div className={`card research-card ${className}`}>
-            <div className="card-meta">{meta}</div>
-            <h3>{title}</h3>
-            <p className="description-text">
-                {isExpanded ? description : `${description.substring(0, 130)}... `}
-                <button className="read-more-btn" onClick={() => setIsExpanded(!isExpanded)}>
-                    {isExpanded ? 'Read Less' : 'Read More'}
-                </button>
-            </p>
-            <a href={link} target="_blank" rel="noopener noreferrer" className="github-link">
-                <FaExternalLinkAlt /> {linkText}
-            </a>
+        <div className="glass-panel p-6 rounded-2xl hover:border-accent-start transition-colors duration-300 group">
+            <div className="flex items-start justify-between gap-4">
+                <div>
+                    <div className="inline-block px-2 py-1 mb-3 rounded bg-accent-start/10 text-accent-start text-xs font-bold uppercase tracking-wide">
+                        {meta}
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-accent-start transition-colors">{title}</h3>
+                    <p className="text-secondary text-sm leading-relaxed mb-4 max-w-3xl">
+                        {description}
+                    </p>
+                    <a href={link} className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-accent-start transition-colors">
+                        <FileText size={16} />
+                        <span className="underline decoration-transparent hover:decoration-accent-start transition-all">{linkText}</span>
+                    </a>
+                </div>
+            </div>
         </div>
     );
 };
@@ -25,30 +27,19 @@ const ResearchCard = ({ meta, title, description, link, linkText, className = ''
 export default function Research() {
     return (
         <section id="research">
+            <h2 className="mb-8">Research</h2>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                <h2>Research & Publications</h2>
-
                 <ResearchCard
-                    meta="Under Review • IEEE EDUCON 2026 • Cairo, Egypt"
-                    title="From Feedback to Insight: Leveraging Transformers and Explainable AI to Identify Helpful Student Reviews for Course Enhancement"
-                    description="Collaborated with a team of researchers from Europe and SIBA to develop a novel approach for identifying helpful student reviews for course enhancement using transformers and explainable AI on a custom dataset collected from coursera with 79000+ instances. I served as the experimentalist for this research."
+                    meta="Under Review • IEEE EDUCON 2026"
+                    title="From Feedback to Insight: Leveraging Transformers and Explainable AI to Identify Helpful Student Reviews"
+                    description="Collaborated with a team of researchers from Europe and SIBA to develop a novel approach using transformers and explainable AI on a custom dataset of 79,000+ Coursera reviews to identify helpful feedback for course enhancement."
                     link="#"
-                    linkText="Read Publication"
+                    linkText="Publication Pending"
                 />
-
-                {/* <ResearchCard
-                    meta="Under Review • CVPR 2026"
-                    title="X-TRM: Cross-Modal Tiny Recursive Models for Anytime Visual Reasoning"
-                    description="Proposed X-TRM, a novel cross-modal tiny recursive model for anytime visual reasoning. X-TRM achieves state-of-the-art performance on a range of visual reasoning tasks while maintaining minimal model size and computational complexity. I am leading this research."
-                    link="#"
-                    linkText="Read Preprint"
-                    className="highlight-card"
-                /> */}
             </motion.div>
         </section>
     );

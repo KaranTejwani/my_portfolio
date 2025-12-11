@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaChevronDown, FaChevronUp, FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 import neuroEmotionImg from '../assets/NeuroEmotion.png';
 import healrImg from '../assets/healr.jpg';
@@ -12,33 +13,38 @@ import digitRecImg from '../assets/handwritten_digit_recognition.png';
 import gestureImg from '../assets/gestureDetector.png';
 import dataAnalysisImg from '../assets/DataAnalysis.png';
 
-const ProjectCard = ({ meta, title, description, tags, link, image, isHidden }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    if (isHidden) return null;
-
+const ProjectCard = ({ meta, title, description, tags, link, image }) => {
     return (
-        <div className="card project-card">
-            <div className="project-content">
-                <div className="card-meta">{meta}</div>
-                <h3>{title}</h3>
-                <p className="description-text">
-                    {isExpanded ? description : `${description.substring(0, 130)}... `}
-                    <button className="read-more-btn" onClick={() => setIsExpanded(!isExpanded)}>
-                        {isExpanded ? 'Read Less' : 'Read More'}
-                    </button>
+        <div className="group relative rounded-2xl bg-panel border border-border overflow-hidden transition-all duration-300 hover:border-accent-start hover:-translate-y-2 hover:shadow-xl hover:shadow-accent-start/10">
+            {/* Image Banner */}
+            <div className="h-48 overflow-hidden relative">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+                <div className="text-xs font-bold text-accent-start uppercase tracking-wider mb-2">{meta}</div>
+                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent-start transition-colors">{title}</h3>
+                <p className="text-secondary text-sm leading-relaxed mb-4 line-clamp-3">
+                    {description}
                 </p>
-                <div className="tags">
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
                     {tags.map((tag, index) => (
-                        <span key={index} className="tag">{tag}</span>
+                        <span key={index} className="px-2 py-1 text-[10px] uppercase font-medium rounded bg-white/5 border border-white/10 text-secondary">
+                            {tag}
+                        </span>
                     ))}
                 </div>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="github-link">
-                    <FaGithub /> View Code
-                </a>
-            </div>
-            <div className="project-image">
-                <img src={image} alt={title} />
+
+                {/* Links */}
+                <div className="flex items-center gap-4 mt-auto">
+                    <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-accent-start transition-colors">
+                        <FaGithub size={16} /> <span className="underline decoration-transparent hover:decoration-accent-start transition-all">View Code</span>
+                    </a>
+                </div>
             </div>
         </div>
     );
@@ -69,23 +75,23 @@ const Projects = () => {
             title: "Simper AI",
             description: "Founded an AI-based EdTech startup. The system automates the creation of exam papers and uses NLP to grade student answers automatically.",
             tags: ["Web Dev", "Automation", "NLP", "EdTech"],
-            link: "https://github.com/KaranTejwani", // Placeholder from original
+            link: "https://github.com/KaranTejwani",
             image: simperImg
         },
         {
             meta: "Web App",
-            title: "Bilingual Transcription and Translation System",
-            description: "A full-stack web application built with React and Flask that leverages OpenAI Whisper for accurate speech-to-text transcription and Google Translate for bilingual conversion (English ↔ Urdu). The system supports multiple audio/video formats, provides export options (TXT, SRT, VTT, JSON), and enables session management for seamless transcription and translation workflows.",
+            title: "Bilingual Transcription",
+            description: "A full-stack web application built with React and Flask that leverages OpenAI Whisper for accurate speech-to-text transcription and Google Translate for bilingual conversion.",
             tags: ["React", "Flask", "OpenAI Whisper", "Google Translate"],
             link: "https://github.com/KaranTejwani/bilingual-transcriber",
             image: transcriberImg
         },
-        // Hidden Projects
+        // More projects
         {
             meta: "Desktop App",
             title: "ChatMate",
-            description: "ChatMate is a local network-based chat application built in Java during my second semester. It allows users to chat across multiple devices connected to the same Wi-Fi using socket programming. The app features user authentication and persistent chat storage, reloading previous conversations upon revisit.",
-            tags: ["Java", "Socket Programming", "Swing", "MySQL"],
+            description: "Local network-based chat application built in Java. Features socket programming, user authentication, and persistent chat storage.",
+            tags: ["Java", "Socket Programming", "MySQL"],
             link: "https://github.com/KaranTejwani/ChatMate",
             image: chatMateImg,
             hidden: true
@@ -111,7 +117,7 @@ const Projects = () => {
         {
             meta: "HCI Project",
             title: "Gesture Detector",
-            description: "Real-time hand gesture (ASL, ISL, BSL and custom gestures) recognition system for controlling computer interfaces using webcam input.",
+            description: "Real-time hand gesture recognition system for controlling computer interfaces using webcam input.",
             tags: ["OpenCV", "MediaPipe", "Python"],
             link: "https://github.com/KaranTejwani/GestureDetection",
             image: gestureImg,
@@ -120,7 +126,7 @@ const Projects = () => {
         {
             meta: "Data Science",
             title: "Data Analysis Suite",
-            description: "Comprehensive data analysis project, focusing on extracting insights from the 'Most Streamed Spotify Songs 2024' dataset obtained from Kaggle.",
+            description: "Comprehensive data analysis project, focusing on extracting insights from the 'Most Streamed Spotify Songs 2024' dataset.",
             tags: ["Pandas", "Matplotlib", "Seaborn"],
             link: "https://github.com/KaranTejwani/DataAnalysis",
             image: dataAnalysisImg,
@@ -132,28 +138,33 @@ const Projects = () => {
 
     return (
         <section id="projects">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                <h2>Featured Projects</h2>
-
+            <h2 className="mb-8">Featured Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {visibleProjects.map((project, index) => (
-                    <ProjectCard key={index} {...project} isHidden={false} />
-                ))}
-
-                <div className="show-more-container">
-                    <button
-                        id="showMoreBtn"
-                        className="btn-secondary"
-                        onClick={() => setShowMore(!showMore)}
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1, duration: 0.5 }}
                     >
-                        {showMore ? 'Show Less' : 'Show More Projects'}
-                    </button>
-                </div>
-            </motion.div>
+                        <ProjectCard {...project} />
+                    </motion.div>
+                ))}
+            </div>
+
+            <div className="mt-12 text-center">
+                <button
+                    onClick={() => setShowMore(!showMore)}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-panel border border-border text-secondary hover:text-white hover:border-accent-start transition-all duration-300"
+                >
+                    {showMore ? (
+                        <>Show Less <ChevronUp size={16} /></>
+                    ) : (
+                        <>Show More Projects <ChevronDown size={16} /></>
+                    )}
+                </button>
+            </div>
         </section>
     );
 };
