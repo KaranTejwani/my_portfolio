@@ -1,43 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Menu, ArrowUp } from 'lucide-react';
 import Sidebar from './components/Sidebar';
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Skills from './components/Skills';
-import Research from './components/Research';
-import Projects from './components/Projects';
-import Certifications from './components/Certifications';
-import Experience from './components/Experience';
 import Footer from './components/Footer';
+
+// Pages
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ExperiencePage from './pages/ExperiencePage';
+import SkillsPage from './pages/SkillsPage';
+import ResearchPage from './pages/ResearchPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [activeSection, setActiveSection] = useState('about');
+  const location = useLocation();
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
-  // Scroll Spy & Scroll to Top logic
-  useEffect(() => {
+  // Scroll to Top logic
+  React.useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
-
-      const sections = ['about', 'skills', 'projects', 'experience', 'research', 'certifications'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top >= -100 && rect.top < 300) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Scroll to top on route change
+  React.useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [location.pathname]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -47,41 +42,26 @@ function App() {
     <div className="min-h-screen bg-background text-primary font-sans selection:bg-accent-start selection:text-white">
       {/* Mobile Menu Toggle */}
       <button
-        className="fixed top-4 right-4 z-50 p-2 bg-panel border border-border rounded-lg text-secondary hover:text-white lg:hidden"
+        className="fixed top-3 right-3 z-50 p-2.5 bg-panel/80 backdrop-blur-lg border border-border rounded-lg text-secondary hover:text-white lg:hidden transition-all duration-150"
         onClick={toggleSidebar}
         aria-label="Toggle Menu"
       >
-        <Menu size={24} />
+        <Menu size={18} />
       </button>
 
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      <main className="lg:ml-[280px] min-h-screen flex flex-col">
-        <div className="flex-1 w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
-          <Navbar activeSection={activeSection} />
-
-          <div className="space-y-20 md:space-y-28 mt-8">
-            <section id="about" className="scroll-mt-32">
-              <About />
-            </section>
-            <section id="skills" className="scroll-mt-32">
-              <Skills />
-            </section>
-            <section id="projects" className="scroll-mt-32">
-              <Projects />
-            </section>
-            <section id="experience" className="scroll-mt-32">
-              <Experience />
-            </section>
-            <section id="research" className="scroll-mt-32">
-              <Research />
-            </section>
-
-            {/* Optional: Add Certifications if needed, or merge into About/Experience */}
-            <section id="certifications" className="scroll-mt-32">
-              <Certifications />
-            </section>
-          </div>
+      <main className="lg:ml-[260px] min-h-screen flex flex-col">
+        <div className="flex-1 w-full max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 py-6">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/research" element={<ResearchPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
 
           <Footer />
         </div>
@@ -89,10 +69,11 @@ function App() {
 
       {/* Scroll to Top */}
       <button
-        className={`fixed bottom-8 right-8 p-3 bg-panel border border-border rounded-xl text-secondary hover:text-accent-start transition-all duration-300 z-40 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+        className={`fixed bottom-6 right-6 p-2.5 bg-panel/80 backdrop-blur-lg border border-border rounded-lg text-secondary hover:text-accent-start hover:border-accent-start/40 transition-all duration-150 z-40 ${showScrollTop ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={scrollToTop}
+        aria-label="Scroll to top"
       >
-        <ArrowUp size={20} />
+        <ArrowUp size={16} />
       </button>
     </div>
   );

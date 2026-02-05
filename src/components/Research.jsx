@@ -34,7 +34,7 @@ export default function Research() {
                 viewport={{ once: true }}
             >
                 <ResearchCard
-                    meta="Under Review • IEEE EDUCON 2026"
+                    meta="Accepted • IEEE EDUCON 2026"
                     title="From Feedback to Insight: Leveraging Transformers and Explainable AI to Identify Helpful Student Reviews"
                     description="Collaborated with a team of researchers from Europe and SIBA to develop a novel approach using transformers and explainable AI on a custom dataset of 79,000+ Coursera reviews to identify helpful feedback for course enhancement."
                     link="#"
