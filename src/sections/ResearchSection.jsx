@@ -10,6 +10,13 @@ const publications = [
         authors: ['Zenun Kastrati', 'Dani Bux Shah', 'Sher Muhammad Daudpota', 'Ali Shariq Imnran', 'Karan Kumar'],
         topics: ['Transformers', 'Explainable AI', 'NLP', 'EdTech'],
     },
+    {
+        id: 2, status: 'Accepted', venue: 'IEEE ICOMER 2026',
+        title: 'Beyond Accuracy: Evaluating Explainability of Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
+        abstract: '',
+        authors: ['Karan Kumar', 'Kirti Kour'],
+        topics: ['CNNs', 'ViTs', 'Explainable AI', 'Computer Vision', 'Image Manipulation Detection', 'Forensic'],
+    },
 ];
 
 const researchInterests = [
@@ -39,7 +46,7 @@ const ResearchSection = () => {
                     <div className="grid grid-cols-2 gap-4 mb-12 max-w-md">
                         <div className="obsidian-card p-5 text-center">
                             <FileText className="w-5 h-5 mx-auto mb-2 text-accent" />
-                            <div className="text-2xl font-bold text-text-primary font-display">1</div>
+                            <div className="text-2xl font-bold text-text-primary font-display">2</div>
                             <div className="text-xs text-text-muted uppercase tracking-wider">Publication</div>
                         </div>
                         <div className="obsidian-card p-5 text-center">
@@ -76,8 +83,8 @@ const ResearchSection = () => {
                                         <span
                                             key={i}
                                             className={`px-3 py-1.5 rounded-lg text-sm ${author === 'Karan Kumar'
-                                                    ? 'bg-accent/15 text-accent border border-accent/25 font-medium'
-                                                    : 'bg-bg-surface text-text-secondary border border-border'
+                                                ? 'bg-accent/15 text-accent border border-accent/25 font-medium'
+                                                : 'bg-bg-surface text-text-secondary border border-border'
                                                 }`}
                                         >
                                             {author}
