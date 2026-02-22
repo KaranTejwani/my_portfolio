@@ -33,18 +33,18 @@ const iconMap = {
     tailwindcss: { icon: SiTailwindcss, color: '#06B6D4' },
     'next.js': { icon: SiNextdotjs, color: '#FFFFFF' },
     vite: { icon: SiVite, color: '#646CFF' },
-    bci: { icon: null, color: '#00D9FF' },
-    nlp: { icon: null, color: '#00FFA3' },
+    bci: { icon: null, color: '#D4A853' },
+    nlp: { icon: null, color: '#D4A853' },
 };
 
 const TechBadge = ({ name, size = 'sm', showIcon = true }) => {
     const key = name.toLowerCase();
     const iconData = iconMap[key];
     const IconComponent = iconData?.icon;
-    const iconColor = iconData?.color || '#FFFFFF';
+    const iconColor = iconData?.color || '#D4A853';
 
     const sizeClasses = {
-        sm: 'px-2 py-1 text-xs gap-1.5',
+        sm: 'px-2.5 py-1 text-xs gap-1.5',
         md: 'px-3 py-1.5 text-sm gap-2',
         lg: 'px-4 py-2 text-base gap-2',
     };
@@ -56,9 +56,7 @@ const TechBadge = ({ name, size = 'sm', showIcon = true }) => {
     };
 
     return (
-        <span
-            className={`inline-flex items-center rounded-lg bg-white/5 border border-white/10 text-white/80 font-medium ${sizeClasses[size]}`}
-        >
+        <span className={`tag ${sizeClasses[size]}`}>
             {showIcon && IconComponent && (
                 <IconComponent size={iconSizes[size]} style={{ color: iconColor }} />
             )}
