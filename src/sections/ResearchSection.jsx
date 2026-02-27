@@ -12,7 +12,7 @@ const publications = [
     },
     {
         id: 2, status: 'Accepted', venue: 'IEEE ICOMER 2026',
-        title: 'Beyond Accuracy: Evaluating Explainability of Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
+        title: 'Analyzing the Classification-Localization Gap Between Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
         abstract: '',
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'ViTs', 'Explainable AI', 'Computer Vision', 'Image Manipulation Detection', 'Forensic'],
