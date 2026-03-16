@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail, Sparkles, Brain, Code, Rocket, ChevronDown } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal';
+import { publications } from './ResearchSection';
 
 const HeroSection = () => {
     const [displayText, setDisplayText] = useState('');
@@ -21,7 +22,7 @@ const HeroSection = () => {
     }, []);
 
     const stats = [
-        { label: 'Publications', value: '1', icon: Brain },
+        { label: 'Publications', value: publications.length.toString(), icon: Brain },
         { label: 'Projects', value: '8+', icon: Code },
         { label: 'Focus Area', value: 'AI', icon: Sparkles },
         { label: 'Graduate', value: '2026', icon: Rocket },

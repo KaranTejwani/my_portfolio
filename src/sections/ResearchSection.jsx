@@ -2,7 +2,7 @@ import React from 'react';
 import { FileText, Users, Clock } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal';
 
-const publications = [
+export const publications = [
     {
         id: 1, status: 'Accepted', venue: 'IEEE EDUCON 2026',
         title: 'From Feedback to Insight: Leveraging Transformers and Explainable AI to Identify Helpful Student Reviews',
@@ -46,8 +46,8 @@ const ResearchSection = () => {
                     <div className="grid grid-cols-2 gap-4 mb-12 max-w-md">
                         <div className="obsidian-card p-5 text-center">
                             <FileText className="w-5 h-5 mx-auto mb-2 text-accent" />
-                            <div className="text-2xl font-bold text-text-primary font-display">2</div>
-                            <div className="text-xs text-text-muted uppercase tracking-wider">Publication</div>
+                            <div className="text-2xl font-bold text-text-primary font-display">{publications.length}</div>
+                            <div className="text-xs text-text-muted uppercase tracking-wider">Publications</div>
                         </div>
                         <div className="obsidian-card p-5 text-center">
                             <Users className="w-5 h-5 mx-auto mb-2 text-accent" />
