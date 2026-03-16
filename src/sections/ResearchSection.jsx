@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Users, Clock } from 'lucide-react';
+import { FileText, Users, Clock, Github } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal';
 
 export const publications = [
@@ -9,6 +9,7 @@ export const publications = [
         abstract: '',
         authors: ['Zenun Kastrati', 'Dani Bux Shah', 'Sher Muhammad Daudpota', 'Ali Shariq Imnran', 'Karan Kumar'],
         topics: ['Transformers', 'Explainable AI', 'NLP', 'EdTech'],
+        githubUrl: 'https://github.com/KaranTejwani',
     },
     {
         id: 2, status: 'Accepted', venue: 'IEEE ICOMER 2026',
@@ -16,6 +17,7 @@ export const publications = [
         abstract: '',
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'ViTs', 'Explainable AI', 'Computer Vision', 'Image Manipulation Detection', 'Forensic'],
+        githubUrl: 'https://github.com/KaranTejwani/CNN-vs-ViT-for-Image-Manipulation-Detection',
     },
 ];
 
@@ -70,10 +72,23 @@ const ResearchSection = () => {
                                 <span className="text-sm text-text-muted">{pub.venue}</span>
                             </div>
 
-                            {/* Title */}
-                            <h3 className="text-xl md:text-2xl font-bold text-text-primary font-display mb-5 leading-snug">
-                                {pub.title}
-                            </h3>
+                            {/* Title & Actions */}
+                            <div className="flex justify-between items-start gap-4 mb-5">
+                                <h3 className="text-xl md:text-2xl font-bold text-text-primary font-display leading-snug">
+                                    {pub.title}
+                                </h3>
+                                {pub.githubUrl && (
+                                    <a
+                                        href={pub.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium text-text-secondary hover:text-accent hover:bg-accent/10 border border-border hover:border-accent/30 transition-all duration-300"
+                                    >
+                                        <Github size={16} />
+                                        <span className="hidden sm:inline">View Code</span>
+                                    </a>
+                                )}
+                            </div>
 
                             {/* Authors */}
                             <div className="mb-5">
