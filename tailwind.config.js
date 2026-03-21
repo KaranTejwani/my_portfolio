@@ -8,21 +8,21 @@ export default {
         extend: {
             colors: {
                 bg: {
-                    primary: '#060608',
-                    elevated: '#0D0D12',
-                    surface: '#14141B',
+                    primary: '#13141C',
+                    elevated: '#1a1c23',
+                    surface: '#1E2029',
                 },
                 accent: {
-                    DEFAULT: '#D4A853',
-                    dim: '#B8912E',
-                    glow: 'rgba(212,168,83,0.15)',
+                    DEFAULT: '#00D2D3',
+                    dim: '#00B0B0',
+                    glow: 'rgba(0, 210, 211, 0.1)',
                 },
                 text: {
-                    primary: '#F5F5F7',
-                    secondary: 'rgba(245,245,247,0.55)',
-                    muted: 'rgba(245,245,247,0.35)',
+                    primary: '#FFFFFF',
+                    secondary: 'rgba(255, 255, 255, 0.70)',
+                    muted: 'rgba(255, 255, 255, 0.40)',
                 },
-                border: 'rgba(245,245,247,0.06)',
+                border: 'rgba(255, 255, 255, 0.05)',
             },
             fontFamily: {
                 display: ['Outfit', 'system-ui', 'sans-serif'],
@@ -38,27 +38,20 @@ export default {
                 '22': '5.5rem',
             },
             backgroundImage: {
-                'accent-gradient': 'linear-gradient(135deg, #D4A853 0%, #F0D78C 100%)',
-                'accent-gradient-soft': 'linear-gradient(135deg, rgba(212,168,83,0.2) 0%, rgba(240,215,140,0.1) 100%)',
-                'obsidian-gradient': 'linear-gradient(180deg, #060608 0%, #0D0D12 50%, #060608 100%)',
+                'accent-gradient': 'linear-gradient(135deg, #00F0FF 0%, #00C4D1 100%)',
             },
             boxShadow: {
-                'glow': '0 0 20px rgba(212,168,83,0.25)',
-                'glow-lg': '0 0 40px rgba(212,168,83,0.35)',
-                'glow-xl': '0 0 60px rgba(212,168,83,0.4)',
-                'card': '0 4px 24px rgba(0,0,0,0.4)',
-                'card-hover': '0 8px 40px rgba(0,0,0,0.6), 0 0 20px rgba(212,168,83,0.1)',
+                'glow': '0 0 10px rgba(0, 240, 255, 0.15)',
+                'glow-lg': '0 0 20px rgba(0, 240, 255, 0.2)',
+                'glow-xl': '0 0 30px rgba(0, 240, 255, 0.25)',
+                'glow-cyan': '0 0 20px rgba(0, 240, 255, 0.3)',
+                'card': '0 4px 15px rgba(0,0,0,0.3)',
+                'card-hover': '0 8px 30px rgba(0,0,0,0.4), 0 0 15px rgba(0, 240, 255, 0.1)',
             },
             animation: {
                 'fade-in': 'fadeIn 0.6s ease-out',
                 'slide-up': 'slideUp 0.7s ease-out',
                 'slide-in-left': 'slideInLeft 0.6s ease-out',
-                'float': 'float 8s ease-in-out infinite',
-                'float-delayed': 'float 8s ease-in-out 2s infinite',
-                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                'shimmer': 'shimmer 3s ease-in-out infinite',
-                'glow-pulse': 'glowPulse 3s ease-in-out infinite',
-                'scroll-hint': 'scrollHint 2s ease-in-out infinite',
             },
             keyframes: {
                 fadeIn: {
@@ -66,29 +59,12 @@ export default {
                     '100%': { opacity: '1' },
                 },
                 slideUp: {
-                    '0%': { opacity: '0', transform: 'translateY(30px)' },
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
                     '100%': { opacity: '1', transform: 'translateY(0)' },
                 },
                 slideInLeft: {
-                    '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                    '0%': { opacity: '0', transform: 'translateX(-20px)' },
                     '100%': { opacity: '1', transform: 'translateX(0)' },
-                },
-                float: {
-                    '0%, 100%': { transform: 'translateY(0) scale(1)' },
-                    '50%': { transform: 'translateY(-20px) scale(1.05)' },
-                },
-                shimmer: {
-                    '0%': { backgroundPosition: '-200% center' },
-                    '100%': { backgroundPosition: '200% center' },
-                },
-                glowPulse: {
-                    '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-                    '50%': { opacity: '0.8', transform: 'scale(1.1)' },
-                },
-                scrollHint: {
-                    '0%': { transform: 'translateY(0)', opacity: '1' },
-                    '50%': { transform: 'translateY(8px)', opacity: '0.5' },
-                    '100%': { transform: 'translateY(0)', opacity: '1' },
                 },
             },
             backdropBlur: {

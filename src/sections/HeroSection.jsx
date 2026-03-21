@@ -1,170 +1,79 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail, Sparkles, Brain, Code, Rocket, ChevronDown } from 'lucide-react';
-import SectionReveal from '../components/SectionReveal';
-import { publications } from './ResearchSection';
+import { heroData } from '../data/portfolioData';
 
 const HeroSection = () => {
-    const [displayText, setDisplayText] = useState('');
-    const fullText = "AI Researcher & Full-Stack Developer";
-
-    useEffect(() => {
-        let index = 0;
-        const timer = setInterval(() => {
-            if (index <= fullText.length) {
-                setDisplayText(fullText.slice(0, index));
-                index++;
-            } else {
-                clearInterval(timer);
-            }
-        }, 45);
-        return () => clearInterval(timer);
-    }, []);
-
-    const stats = [
-        { label: 'Publications', value: publications.length.toString(), icon: Brain },
-        { label: 'Projects', value: '8+', icon: Code },
-        { label: 'Focus Area', value: 'AI', icon: Sparkles },
-        { label: 'Graduate', value: '2026', icon: Rocket },
-    ];
-
-    const scrollToAbout = () => {
-        const el = document.getElementById('about');
-        if (el) {
-            const top = el.getBoundingClientRect().top + window.scrollY - 80;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
-    };
-
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Ambient Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="ambient-orb ambient-orb-gold w-[500px] h-[500px] -top-48 -right-48 animate-float" />
-                <div className="ambient-orb ambient-orb-warm w-[400px] h-[400px] -bottom-32 -left-32 animate-float-delayed" />
-                <div className="absolute inset-0 dot-pattern opacity-30" />
-            </div>
-
-            <div className="section-container relative z-10 py-20">
-                <div className="max-w-3xl">
-                    {/* Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        className="mb-8"
-                    >
-                        <span className="section-badge">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                            Available for Opportunities
-                        </span>
-                    </motion.div>
-
-                    {/* Name */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.7 }}
-                        className="mb-4"
-                    >
-                        <span className="text-text-primary">Hi, I'm </span>
-                        <span className="text-gradient-gold">Karan Kumar</span>
-                    </motion.h1>
-
-                    {/* Typewriter Subtitle */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 1 }}
-                        className="text-xl md:text-2xl lg:text-3xl text-text-secondary font-light mb-8 h-10 font-display"
-                    >
-                        {displayText}
-                        <span className="animate-pulse text-accent">|</span>
-                    </motion.div>
-
-                    {/* Description */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 1.2 }}
-                        className="text-lg text-text-secondary max-w-xl leading-relaxed mb-10"
-                    >
-                        Final year CS student at Sukkur IBA University, passionate about building intelligent systems
-                        at the intersection of Deep Learning, BCI and Generative AI.
-                    </motion.p>
-
-                    {/* CTA Buttons */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 1.4 }}
-                        className="flex flex-wrap gap-4 mb-12"
-                    >
-                        <a href="#projects" className="btn-primary">
-                            View Projects
-                            <ArrowRight size={18} />
-                        </a>
-                        <a href="#contact" className="btn-secondary">
-                            Get In Touch
-                        </a>
-                    </motion.div>
-
-                    {/* Social Links */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 1.6 }}
-                        className="flex gap-3"
-                    >
-                        {[
-                            { href: 'https://github.com/KaranTejwani', icon: Github },
-                            { href: 'https://linkedin.com/in/karantejwani/', icon: Linkedin },
-                            { href: 'mailto:karantejwani48@gmail.com', icon: Mail },
-                        ].map((social) => (
-                            <a
-                                key={social.href}
-                                href={social.href}
-                                target={social.href.startsWith('mailto') ? undefined : '_blank'}
-                                rel="noopener noreferrer"
-                                className="p-3 rounded-xl border border-border text-text-secondary hover:text-accent hover:border-accent/30 transition-all duration-300 hover:shadow-glow"
-                            >
-                                <social.icon size={20} />
-                            </a>
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* Stats Strip */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 1.8 }}
-                    className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
+        <section id="hero" className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 pb-16">
+            <div className="section-container relative z-10 w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+                
+                {/* Left Content */}
+                <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="flex-1 max-w-2xl"
                 >
-                    {stats.map((stat, index) => (
-                        <div
-                            key={index}
-                            className="obsidian-card p-5 text-center group"
-                        >
-                            <stat.icon className="w-5 h-5 mx-auto mb-2 text-accent opacity-60 group-hover:opacity-100 transition-opacity" />
-                            <div className="text-2xl font-bold text-text-primary font-display mb-1">{stat.value}</div>
-                            <div className="text-xs uppercase tracking-widest text-text-muted">{stat.label}</div>
-                        </div>
-                    ))}
-                </motion.div>
-            </div>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-text-primary mb-2 tracking-wide font-sans">
+                        {heroData.greeting}
+                    </h2>
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-2 font-display">
+                        {heroData.name}
+                    </h1>
+                    <h3 className="text-xl md:text-3xl font-bold mb-6 flex items-center flex-wrap gap-2 text-text-primary font-display">
+                        {heroData.role.startsWith('And I\'m a') ? (
+                            <>
+                                And I'm a <span className="text-accent">{heroData.role.replace("And I'm a ", "")}</span>
+                            </>
+                        ) : (
+                            <span className="text-accent">{heroData.role}</span>
+                        )}
+                    </h3>
+                    
+                    <p className="text-text-secondary text-base lg:text-lg max-w-lg leading-relaxed mb-10">
+                        {heroData.description}
+                    </p>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.5 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
-                onClick={scrollToAbout}
-            >
-                <span className="text-xs text-text-muted uppercase tracking-widest">Scroll</span>
-                <ChevronDown size={16} className="text-accent animate-scroll-hint" />
-            </motion.div>
+                    <div className="flex flex-wrap gap-4 mb-10">
+                        {heroData.socials.map((social, idx) => {
+                            const Icon = social.icon;
+                            return (
+                                <a 
+                                    key={idx}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-accent text-accent hover:bg-accent/10 hover:shadow-glow transition-all duration-300"
+                                >
+                                    <Icon size={20} />
+                                </a>
+                            );
+                        })}
+                    </div>
+
+                    <a href={heroData.cvLink} className="btn-primary text-sm lg:text-base px-8 py-3 rounded-full">
+                        Download CV
+                    </a>
+                </motion.div>
+
+                {/* Right Content - Hexagon Profile */}
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="flex-1 flex justify-center lg:justify-end w-full"
+                >
+                    <div className="hexagon-wrapper">
+                        <div className="hexagon-inner">
+                            <img 
+                                src={heroData.image} 
+                                alt={heroData.name} 
+                            />
+                        </div>
+                    </div>
+                </motion.div>
+
+            </div>
         </section>
     );
 };
