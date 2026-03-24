@@ -57,7 +57,7 @@ export const aboutData = {
 
 export const experiences = [
     {
-        id: 1, title: 'DeepNLP.ai', role: 'Research Collaborator',
+        id: 1, title: 'deep-nlp.net', role: 'Research Collaborator',
         duration: 'Oct 2025 - Present', location: 'Remote',
         description: 'Collaborated on multiple research projects resulting in accepted IEEE publications, conducting experiments in Transformers, XAI, and NLP.',
         highlights: ['Research', 'Deep Learning', 'IEEE Publications'], current: true,
