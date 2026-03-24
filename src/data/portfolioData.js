@@ -25,8 +25,8 @@ export const navLinks = [
 export const heroData = {
     greeting: "Hello, It's Me",
     name: "Karan Kumar",
-    role: "And I'm a AI Researcher",
-    description: "Final year CS student at Sukkur IBA University, passionate about building intelligent systems at the intersection of Deep Learning, BCI and Generative AI.",
+    role: "And I'm an AI Research Engineer",
+    description: "Final year CS student at Sukkur IBA University, building at the intersection of Deep Learning, Explainable AI, and Generative AI - from research to production.",
     cvLink: "#",
     image: karanImg,
     socials: [
@@ -37,8 +37,8 @@ export const heroData = {
 };
 
 export const aboutData = {
-    bio: "I'm Karan Kumar, a final-year Computer Science student and AI researcher focused on building explainable and trustworthy AI systems, with interests in computer vision, NLP, and generative AI.",
-    identity: "Beyond research, I am a versatile Full-Stack Developer. I deployed Healr - a full stack web based healthcare platform, and an e-commerce apps using Flutter.",
+    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with published work spanning Transformers, Computer Vision, and XAI.",
+    identity: "Beyond research, I bring ideas to production. I've shipped Healr — a full-stack healthcare platform - and built cross-platform apps using Flutter, bridging the gap between research and real-world systems.",
     location: "Sukkur, Pakistan",
     interests: [
         { label: 'Deep Learning', icon: Brain },
@@ -54,7 +54,6 @@ export const aboutData = {
         { role: 'Organized', org: '50+ online sessions for students' },
     ]
 };
-
 export const experiences = [
     {
         id: 1, title: 'DeepNLP.ai', role: 'Research Collaborator',
