@@ -26,7 +26,7 @@ export const heroData = {
     greeting: "Hello, It's Me",
     name: "Karan Kumar",
     role: "And I'm an AI Research Engineer",
-    description: "Final year CS student at Sukkur IBA University, building at the intersection of Deep Learning, Explainable AI, and Generative AI - from research to production.",
+    description: "Final year CS student at Sukkur IBA University, building at the intersection of Deep Learning, Explainable AI, and Neuroscience - from rigorous research to production systems.",
     cvLink: "#",
     image: karanImg,
     socials: [
@@ -37,12 +37,12 @@ export const heroData = {
 };
 
 export const aboutData = {
-    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with published work spanning Transformers, Computer Vision, and XAI.",
-    identity: "Beyond research, I bring ideas to production. I've shipped Healr — a full-stack healthcare platform - and built cross-platform apps using Flutter, bridging the gap between research and real-world systems.",
+    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with published work spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets for real-time emotion recognition - bridging neuroscience research with a deployed mobile application.",
+    identity: "I don't just research - I ship. From a production healthcare platform to a real-time BCI mobile app that classifies emotions from brainwave signals, I build systems that take research from experiment to the real world.",
     location: "Sukkur, Pakistan",
     interests: [
         { label: 'Deep Learning', icon: Brain },
-        { label: 'Neuroscience', icon: Zap },
+        { label: 'Neuroscience & BCI', icon: Zap },
         { label: 'Generative AI', icon: Sparkles },
         { label: 'Large Language Models', icon: Bot },
         { label: 'XAI', icon: Cpu },
@@ -54,6 +54,7 @@ export const aboutData = {
         { role: 'Organized', org: '50+ online sessions for students' },
     ]
 };
+
 export const experiences = [
     {
         id: 1, title: 'DeepNLP.ai', role: 'Research Collaborator',
