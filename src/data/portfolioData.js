@@ -37,8 +37,8 @@ export const heroData = {
 };
 
 export const aboutData = {
-    bio: "I'm Karan Kumar, a final-year Computer Science student and AI researcher focused on building explainable and trustworthy machine learning systems, with interests in computer vision, NLP, and generative AI.",
-    identity: "Beyond research, I am a versatile Full-Stack Developer. I deployed Healr, a healthcare platform, and engineered e-commerce apps using Flutter.",
+    bio: "I'm Karan Kumar, a final-year Computer Science student and AI researcher focused on building explainable and trustworthy AI systems, with interests in computer vision, NLP, and generative AI.",
+    identity: "Beyond research, I am a versatile Full-Stack Developer. I deployed Healr - a full stack web based healthcare platform, and an e-commerce apps using Flutter.",
     location: "Sukkur, Pakistan",
     interests: [
         { label: 'Deep Learning', icon: Brain },
@@ -51,28 +51,34 @@ export const aboutData = {
     communityWork: [
         { role: 'Lead', org: 'Programming Resource Centre' },
         { role: 'Board Member', org: 'Sindh Educational Organization' },
-        { role: 'Organized', org: '50+ sessions to empower students' },
+        { role: 'Organized', org: '50+ online sessions for students' },
     ]
 };
 
 export const experiences = [
     {
-        id: 1, title: 'National Assembly of Pakistan', role: 'AI Intern',
+        id: 1, title: 'DeepNLP.ai', role: 'Research Collaborator',
+        duration: 'Oct 2025 - Present', location: 'Remote',
+        description: 'Collaborated on multiple research paper and conducted experiments and writings.',
+        highlights: ['Research', 'Deep Learning', 'Publications'], current: true,
+    },
+    {
+        id: 2, title: 'National Assembly of Pakistan', role: 'AI Intern',
         duration: 'June 2026 - Aug 2026', location: 'Islamabad',
         description: 'Developed and deployed a bilingual transcribing system for internal use.',
-        highlights: ['OpenAI Whisper', 'Bilingual Translation', 'Production'], current: true,
+        highlights: ['OpenAI Whisper', 'Bilingual Translation', 'Production'], current: false,
     },
     {
-        id: 2, title: 'Propulsion (CS Society)', role: 'PRC Lead',
+        id: 3, title: 'CS Society', role: 'PRC Lead',
         duration: 'Nov 2024 - Oct 2025', location: 'Sukkur IBA',
         description: 'Organized coding sessions, tech events, and peer mentorship programs.',
-        highlights: ['Leadership', 'Events', 'Mentorship'],
+        highlights: ['Leadership', 'Events', 'Mentorship'], current: false,
     },
     {
-        id: 3, title: 'NEP NIC Sukkur', role: 'Incubatee (Simper AI)',
+        id: 4, title: 'NEP NIC Sukkur', role: 'Incubatee (Simper AI)',
         duration: 'May 2024 - Aug 2024', location: 'Sukkur',
         description: 'Incubated Simper AI, an intelligent online examination system.',
-        highlights: ['Startup', 'Product Dev', 'Mentorship'],
+        highlights: ['Startup', 'Product Dev', 'Mentorship'], current: false,
     },
 ];
 
@@ -146,6 +152,6 @@ export const publicationsData = [
         title: 'Analyzing the Classification-Localization Gap Between Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'ViTs', 'Explainable AI'],
-        githubUrl: '#',
+        githubUrl: 'https://github.com/KaranTejwani',
     },
 ];
