@@ -37,8 +37,8 @@ export const heroData = {
 };
 
 export const aboutData = {
-    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with published work spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets for real-time emotion recognition - bridging neuroscience research with a deployed mobile application.",
-    identity: "I don't just research - I ship. From a production healthcare platform to a real-time BCI mobile app that classifies emotions from brainwave signals, I build systems that take research from experiment to the real world.",
+    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with two accepted publications at IEEE venues spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets with multiple preprocessing pipelines for real-time emotion recognition - culminating in a deployed mobile application that classifies emotions directly from brainwave signals.",
+    identity: "I don't just research - I ship. From a production healthcare platform to a bilingual transcription system deployed at the National Assembly of Pakistan, I build systems that take ideas from experiment to the real world.",
     location: "Sukkur, Pakistan",
     interests: [
         { label: 'Deep Learning', icon: Brain },
@@ -59,82 +59,82 @@ export const experiences = [
     {
         id: 1, title: 'DeepNLP.ai', role: 'Research Collaborator',
         duration: 'Oct 2025 - Present', location: 'Remote',
-        description: 'Collaborated on multiple research paper and conducted experiments and writings.',
-        highlights: ['Research', 'Deep Learning', 'Publications'], current: true,
+        description: 'Collaborated on multiple research projects resulting in accepted IEEE publications, conducting experiments in Transformers, XAI, and NLP.',
+        highlights: ['Research', 'Deep Learning', 'IEEE Publications'], current: true,
     },
     {
         id: 2, title: 'National Assembly of Pakistan', role: 'AI Intern',
-        duration: 'June 2026 - Aug 2026', location: 'Islamabad',
-        description: 'Developed and deployed a bilingual transcribing system for internal use.',
-        highlights: ['OpenAI Whisper', 'Bilingual Translation', 'Production'], current: false,
+        duration: 'June 2025 - Aug 2025', location: 'Islamabad',
+        description: 'Developed and deployed a production-grade bilingual transcription system using OpenAI Whisper for internal parliamentary use.',
+        highlights: ['OpenAI Whisper', 'Bilingual Translation', 'Production Deployment'], current: false,
     },
     {
         id: 3, title: 'CS Society', role: 'PRC Lead',
         duration: 'Nov 2024 - Oct 2025', location: 'Sukkur IBA',
-        description: 'Organized coding sessions, tech events, and peer mentorship programs.',
+        description: 'Led the Programming Resource Centre - organizing coding sessions, technical events, and peer mentorship programs for 200+ students.',
         highlights: ['Leadership', 'Events', 'Mentorship'], current: false,
     },
     {
         id: 4, title: 'NEP NIC Sukkur', role: 'Incubatee (Simper AI)',
         duration: 'May 2024 - Aug 2024', location: 'Sukkur',
-        description: 'Incubated Simper AI, an intelligent online examination system.',
-        highlights: ['Startup', 'Product Dev', 'Mentorship'], current: false,
+        description: 'Incubated Simper AI - an NLP-powered intelligent examination system - through a nationally recognized startup incubation program.',
+        highlights: ['Startup', 'Product Development', 'NLP'], current: false,
     },
 ];
 
 export const projectsData = [
     {
         id: 1, category: 'ai', meta: 'Final Year Project', title: 'NeuroEmotion',
-        description: 'A mobile application that interprets EEG brainwaves to analyze human emotions in real-time.',
-        tags: ['Flutter', 'Python', 'TensorFlow', 'BCI'], link: 'https://github.com/orgs/NeuroEmotion',
+        description: 'Benchmarked 18 deep learning models across two officially acquired EEG datasets with multiple preprocessing techniques. Trained the best-performing model and deployed a mobile application that classifies human emotions in real-time from raw brainwave signals via EEG.',
+        tags: ['Flutter', 'Python', 'TensorFlow', 'EEG', 'BCI', 'Signal Processing'], link: 'https://github.com/orgs/NeuroEmotion',
         image: neuroEmotionImg, featured: true,
     },
     {
         id: 2, category: 'web', meta: 'Web App', title: 'Healr',
-        description: 'A full-stack healthcare platform to search FDA-approved medicines, book lab tests, and consult doctors.',
+        description: 'A full-stack healthcare platform to search FDA-approved medicines, book lab tests, and consult doctors - built and deployed end-to-end.',
         tags: ['React', 'Node.js', 'Express.js', 'MongoDB'], link: 'https://github.com/KaranTejwani/healr',
         image: healrImg, featured: true,
     },
     {
         id: 3, category: 'ai', meta: 'Startup', title: 'Simper AI',
-        description: 'AI-based EdTech startup automating exam paper creation and NLP-powered answer grading.',
+        description: 'AI-based EdTech startup automating exam paper generation and NLP-powered answer grading - incubated at NEP NIC Sukkur.',
         tags: ['React', 'Python', 'NLP', 'OpenAI'], link: 'https://github.com/KaranTejwani',
         image: simperImg, featured: true,
     },
     {
-        id: 4, category: 'web', meta: 'Web App', title: 'Bilingual Transcription',
-        description: 'Full-stack app using OpenAI Whisper for speech-to-text.',
-        tags: ['React', 'Flask', 'OpenAI'], link: 'https://github.com/KaranTejwani/bilingual-transcriber',
+        id: 4, category: 'web', meta: 'Web App', title: 'Bilingual Transcription System',
+        description: 'Production-grade bilingual speech-to-text system built with OpenAI Whisper - deployed at the National Assembly of Pakistan for internal use.',
+        tags: ['React', 'Flask', 'OpenAI Whisper', 'Production'], link: 'https://github.com/KaranTejwani/bilingual-transcriber',
         image: transcriberImg,
     },
     {
         id: 5, category: 'other', meta: 'Desktop', title: 'ChatMate',
-        description: 'Local network chat app with socket programming and user authentication.',
+        description: 'Local network chat application with real-time socket programming and user authentication.',
         tags: ['Java', 'MySQL'], link: 'https://github.com/KaranTejwani/ChatMate',
         image: chatMateImg,
     },
     {
         id: 6, category: 'mobile', meta: 'Mobile', title: 'FindIt',
-        description: 'Lost and found application connecting communities.',
+        description: 'Community-driven lost and found mobile application.',
         tags: ['Flutter', 'Firebase'], link: 'https://github.com/KaranTejwani/finddd',
         image: findItImg,
     },
     {
-        id: 7, category: 'ai', meta: 'CV', title: 'Digit Recognition',
-        description: 'Deep Learning project for handwritten digit recognition.',
-        tags: ['Python', 'TensorFlow'], link: 'https://github.com/KaranTejwani/Handwritten_Digit_Recognition',
+        id: 7, category: 'ai', meta: 'Computer Vision', title: 'Digit Recognition',
+        description: 'Deep learning model for handwritten digit recognition using convolutional neural networks.',
+        tags: ['Python', 'TensorFlow', 'CNNs'], link: 'https://github.com/KaranTejwani/Handwritten_Digit_Recognition',
         image: digitRecImg,
     },
     {
         id: 8, category: 'ai', meta: 'HCI', title: 'Gesture Detector',
-        description: 'Real-time hand gesture recognition using webcam.',
+        description: 'Real-time hand gesture recognition system using webcam and computer vision.',
         tags: ['OpenCV', 'Python'], link: 'https://github.com/KaranTejwani/GestureDetection',
         image: gestureImg,
     },
     {
-        id: 9, category: 'other', meta: 'Data', title: 'Data Analysis',
-        description: 'Insights from Spotify 2024 dataset.',
-        tags: ['Python'], link: 'https://github.com/KaranTejwani/DataAnalysis',
+        id: 9, category: 'other', meta: 'Data Analysis', title: 'Spotify Data Analysis',
+        description: 'Exploratory data analysis and insights extracted from the Spotify 2024 dataset.',
+        tags: ['Python', 'Pandas', 'Data Visualization'], link: 'https://github.com/KaranTejwani/DataAnalysis',
         image: dataAnalysisImg,
     },
 ];
@@ -143,7 +143,7 @@ export const publicationsData = [
     {
         id: 1, status: 'Accepted', venue: 'IEEE EDUCON 2026',
         title: 'From Feedback to Insight: Leveraging Transformers and Explainable AI to Identify Helpful Student Reviews',
-        authors: ['Zenun Kastrati', 'Dani Bux Shah', 'Sher Muhammad Daudpota', 'Ali Shariq Imnran', 'Karan Kumar'],
+        authors: ['Zenun Kastrati', 'Dani Bux Shah', 'Sher Muhammad Daudpota', 'Ali Shariq Imran', 'Karan Kumar'],
         topics: ['Transformers', 'Explainable AI', 'NLP', 'EdTech'],
         githubUrl: 'https://github.com/KaranTejwani',
     },
@@ -151,7 +151,7 @@ export const publicationsData = [
         id: 2, status: 'Accepted', venue: 'IEEE ICOMER 2026',
         title: 'Analyzing the Classification-Localization Gap Between Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
         authors: ['Karan Kumar', 'Kirti Kour'],
-        topics: ['CNNs', 'ViTs', 'Explainable AI'],
+        topics: ['CNNs', 'Vision Transformers', 'Explainable AI', 'Computer Vision'],
         githubUrl: 'https://github.com/KaranTejwani',
     },
 ];
