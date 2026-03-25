@@ -42,9 +42,10 @@ const HeroSection = () => {
                         {heroData.name}
                     </h1>
                     <h3 className="text-lg md:text-2xl font-bold mb-5 flex items-center flex-wrap gap-2 text-text-primary font-display">
-                        {heroData.role.startsWith('And I\'m a') ? (
+                        {heroData.role.startsWith("And I'm a") ? (
                             <>
-                                And I'm a <span className="text-shimmer">{heroData.role.replace("And I'm a ", "")}</span>
+                                {heroData.role.match(/^(And I'm an?\s)/)?.[1]}
+                                <span className="text-shimmer">{heroData.role.replace(/^And I'm an?\s/, "")}</span>
                             </>
                         ) : (
                             <span className="text-shimmer">{heroData.role}</span>
