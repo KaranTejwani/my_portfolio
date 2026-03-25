@@ -8,6 +8,7 @@ import ProjectsSection from './sections/ProjectsSection';
 import ExperienceSection from './sections/ExperienceSection';
 import SkillsSection from './sections/SkillsSection';
 import ResearchSection from './sections/ResearchSection';
+import AchievementsSection from './sections/AchievementsSection';
 import ContactSection from './sections/ContactSection';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       case 'experience': return <ExperienceSection />;
       case 'skills': return <SkillsSection />;
       case 'research': return <ResearchSection />;
+      case 'achievements': return <AchievementsSection />;
       case 'contact': return <ContactSection />;
       default: return <HeroSection />;
     }

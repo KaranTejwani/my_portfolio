@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Brain, Zap, Sparkles, Bot, Cpu, Code, Users, GraduationCap, MapPin, Calendar, ChevronRight, FileText, Clock } from 'lucide-react';
+import { Github, Linkedin, Mail, Brain, Zap, Sparkles, Bot, Cpu, Code, Users, GraduationCap, MapPin, Calendar, ChevronRight, FileText, Clock, Award, Laptop, Mic, BookOpen } from 'lucide-react';
 
 // Images
 import karanImg from '../assets/Karan.jpg';
@@ -19,6 +19,7 @@ export const navLinks = [
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Research', href: '#research' },
+    { label: 'Achievements', href: '#achievements' },
     { label: 'Contact', href: '#contact' },
 ];
 
@@ -153,5 +154,23 @@ export const publicationsData = [
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'Vision Transformers', 'Explainable AI', 'Computer Vision'],
         githubUrl: 'https://github.com/KaranTejwani',
+    },
+];
+
+export const achievementsData = [
+    {
+        id: 1, icon: GraduationCap, title: 'STHP Fully Funded Scholarship',
+        subtitle: 'Awarded a prestigious fully funded scholarship under the Sindh Talent Hunt Program on merit-based for four year of undergraduate studies',
+        category: 'scholarship',
+    },
+    {
+        id: 2, icon: Laptop, title: 'Prime Minister Laptop Scheme',
+        subtitle: 'Received a laptop under the PM Laptop Scheme in recognition of outstanding academic performance.',
+        category: 'scholarship',
+    },
+    {
+        id: 4, icon: BookOpen, title: 'IEEE EDUCON 2026 - Technical Reviewer',
+        subtitle: 'Reviewed two research papers as an official reviewer for IEEE EDUCON 2026, a top education technology conference.',
+        category: 'academic',
     },
 ];
