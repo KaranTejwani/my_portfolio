@@ -149,7 +149,7 @@ export const publicationsData = [
         githubUrl: 'https://github.com/KaranTejwani',
     },
     {
-        id: 2, status: 'Accepted', venue: 'IEEE ICoMET 2026',
+        id: 2, status: 'Accepted', venue: 'IEEE iCoMET 2026',
         title: 'Analyzing the Classification-Localization Gap Between Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'Vision Transformers', 'Explainable AI', 'Computer Vision'],
