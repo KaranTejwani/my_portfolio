@@ -1,119 +1,110 @@
 import React from 'react';
-import { Mail, Linkedin, Github, MapPin, Send, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal';
 
-const ContactSection = () => {
-    const contactMethods = [
-        {
-            icon: Mail, label: 'Email', value: 'karantejwani48@gmail.com',
-            href: 'mailto:karantejwani48@gmail.com',
-        },
-        {
-            icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/karantejwani',
-            href: 'https://linkedin.com/in/karantejwani/',
-        },
-        {
-            icon: Github, label: 'GitHub', value: 'github.com/KaranTejwani',
-            href: 'https://github.com/KaranTejwani',
-        },
-    ];
+const contactMethods = [
+    {
+        icon: Mail,
+        label: 'Email',
+        value: 'karantejwani48@gmail.com',
+        href: 'mailto:karantejwani48@gmail.com',
+        color: 'text-accent',
+        bgColor: 'bg-accent/[0.08]',
+        borderColor: 'border-accent/20',
+    },
+    {
+        icon: Linkedin,
+        label: 'LinkedIn',
+        value: 'linkedin.com/in/karantejwani',
+        href: 'https://linkedin.com/in/karantejwani',
+        color: 'text-blue-400',
+        bgColor: 'bg-blue-400/[0.08]',
+        borderColor: 'border-blue-400/20',
+    },
+    {
+        icon: Github,
+        label: 'GitHub',
+        value: 'github.com/KaranTejwani',
+        href: 'https://github.com/KaranTejwani',
+        color: 'text-purple-400',
+        bgColor: 'bg-purple-400/[0.08]',
+        borderColor: 'border-purple-400/20',
+    },
+];
 
+const ContactSection = () => {
     return (
-        <section id="contact" className="relative py-16 md:py-20">
+        <section id="contact" className="relative py-16 md:py-24">
+            {/* Ambient gradient background glow */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[150px]" />
+                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/[0.03] rounded-full blur-[130px]" />
+            </div>
+
             <div className="section-container relative z-10">
-                {/* CTA Header */}
+                {/* Header */}
                 <SectionReveal className="text-center mb-10">
-                    <span className="section-badge mb-3 inline-flex mx-auto">Connect</span>
-                    <h2 className="text-text-primary max-w-2xl mx-auto">
-                        Let's Build Something <span className="text-accent">Together</span>
+                    <span className="section-badge mb-3 inline-flex">Connect</span>
+                    <h2 className="text-text-primary">
+                        Let's Build Something <span className="text-gradient">Together</span>
                     </h2>
-                    <p className="text-text-secondary max-w-lg mx-auto mt-3 text-sm">
-                        I'm always open to discussing new projects, research collaborations, or opportunities in AI and software development.
+                    <p className="text-text-secondary text-sm mt-3 max-w-lg mx-auto leading-relaxed">
+                        I'm always open to discussing research collaborations, AI projects, freelance opportunities, or just connecting over shared interests.
                     </p>
                 </SectionReveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-4xl mx-auto">
-                    {/* Contact Methods */}
-                    <div className="lg:col-span-5 space-y-3">
-                        <SectionReveal delay={0.1}>
-                            <div className="obsidian-card p-4 hover:border-accent/25 transition-colors">
-                                <div className="flex items-center gap-3 text-text-secondary">
-                                    <div className="p-2.5 bg-accent/[0.06] rounded-xl text-accent">
-                                        <MapPin size={18} />
-                                    </div>
-                                    <span className="text-sm font-medium">Sukkur, Pakistan</span>
-                                </div>
-                            </div>
-                        </SectionReveal>
-
+                {/* Contact Method Cards */}
+                <SectionReveal delay={0.1}>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
                         {contactMethods.map((method, index) => (
-                            <SectionReveal key={method.label} delay={0.12 + index * 0.04}>
-                                <a
-                                    href={method.href}
-                                    target={method.href.startsWith('mailto') ? undefined : '_blank'}
-                                    rel="noopener noreferrer"
-                                    className="block group"
-                                >
-                                    <motion.div
-                                        whileHover={{ x: 3 }}
-                                        className="obsidian-card p-4 flex items-center gap-4 hover:border-accent/25 transition-colors"
-                                    >
-                                        <div className="w-10 h-10 rounded-xl bg-white/[0.03] flex items-center justify-center flex-shrink-0 group-hover:bg-accent/[0.08] transition-colors">
-                                            <method.icon size={18} className="text-accent" />
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <div className="text-[0.6rem] text-text-muted uppercase tracking-widest mb-0.5">{method.label}</div>
-                                            <div className="text-sm text-text-primary font-medium truncate group-hover:text-accent transition-colors duration-300">
-                                                {method.value}
-                                            </div>
-                                        </div>
-                                        <ExternalLink size={14} className="text-text-muted group-hover:text-accent transition-colors flex-shrink-0" />
-                                    </motion.div>
-                                </a>
-                            </SectionReveal>
-                        ))}
-                    </div>
-
-                    {/* Contact Form */}
-                    <SectionReveal delay={0.25} className="lg:col-span-7">
-                        <div className="obsidian-card p-6 hover:border-accent/20 transition-colors h-full flex flex-col justify-center">
-                            <h3 className="text-lg font-bold text-text-primary font-display mb-6">Send a Message</h3>
-                            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="block text-xs font-medium text-text-secondary mb-1.5">Name</label>
-                                        <input
-                                            type="text"
-                                            className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent/50 focus:bg-accent/[0.02] transition-all duration-300"
-                                            placeholder="Your name"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-medium text-text-secondary mb-1.5">Email</label>
-                                        <input
-                                            type="email"
-                                            className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent/50 focus:bg-accent/[0.02] transition-all duration-300"
-                                            placeholder="your@email.com"
-                                        />
-                                    </div>
+                            <motion.a
+                                key={index}
+                                href={method.href}
+                                target={method.label !== 'Email' ? '_blank' : undefined}
+                                rel={method.label !== 'Email' ? 'noopener noreferrer' : undefined}
+                                whileHover={{ x: 4, y: -2 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                                className="glass-card p-5 flex flex-col items-center text-center gap-3 group hover:border-accent/30 transition-colors duration-300 cursor-pointer no-underline"
+                            >
+                                <div className={`p-3 rounded-xl ${method.bgColor} border ${method.borderColor} ${method.color} transition-transform duration-300 group-hover:scale-110`}>
+                                    <method.icon size={22} />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-medium text-text-secondary mb-1.5">Message</label>
-                                    <textarea
-                                        rows={4}
-                                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent/50 focus:bg-accent/[0.02] transition-all duration-300 resize-none"
-                                        placeholder="How can I help you?"
-                                    />
+                                    <div className="text-[0.65rem] font-bold text-text-muted uppercase tracking-widest mb-1">
+                                        {method.label}
+                                    </div>
+                                    <div className="text-xs text-text-secondary group-hover:text-text-primary transition-colors duration-300 flex items-center justify-center gap-1">
+                                        {method.value}
+                                        <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-accent" />
+                                    </div>
                                 </div>
-                                <button type="submit" className="btn-primary w-full py-3 text-xs font-bold tracking-wide uppercase">
-                                    <Send size={14} className="mr-1.5" />
-                                    Send Message
-                                </button>
-                            </form>
+                            </motion.a>
+                        ))}
+                    </div>
+                </SectionReveal>
+
+                {/* Location + CTA */}
+                <SectionReveal delay={0.2}>
+                    <div className="flex flex-col items-center gap-5">
+                        {/* Location Indicator */}
+                        <div className="flex items-center gap-2 text-text-muted text-xs">
+                            <MapPin size={14} className="text-accent/70" />
+                            <span>Sukkur, Pakistan</span>
                         </div>
-                    </SectionReveal>
-                </div>
+
+                        {/* CTA Button */}
+                        <motion.a
+                            href="mailto:karantejwani48@gmail.com"
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="btn-primary text-sm"
+                        >
+                            <Mail size={16} />
+                            Get in Touch
+                        </motion.a>
+                    </div>
+                </SectionReveal>
             </div>
         </section>
     );

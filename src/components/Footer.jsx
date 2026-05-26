@@ -1,41 +1,55 @@
 import React from 'react';
 import { heroData } from '../data/portfolioData';
+import { ArrowUp } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ scrollToSection }) => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative py-4 bg-[#0f1117] border-t border-white/[0.05]">
+        <footer className="relative py-3.5 bg-[--bg-primary]/60 border-t border-white/[0.04]">
             {/* Subtle top glow line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
-            
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-[--accent]/20 to-transparent" />
+
             <div className="section-container">
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-                    {/* Brand */}
+                    {/* Brand & Copyright */}
                     <div className="flex items-center gap-3">
-                        <span className="text-sm font-display font-bold text-text-primary">
-                            Portfolio<span className="text-accent">.</span>
+                        <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[--accent] to-[--accent-secondary] flex items-center justify-center text-white font-bold text-[0.65rem]">
+                            K
+                        </div>
+                        <span className="text-xs text-[--text-muted]">
+                            © {currentYear} {heroData.name}. All rights reserved.
                         </span>
-                        <span className="text-text-muted text-xs">|</span>
-                        <span className="text-xs text-text-muted">{heroData.name} © {currentYear}</span>
                     </div>
 
-                    {/* Social Links */}
-                    <div className="flex gap-2.5">
-                        {heroData.socials.map((social, idx) => {
-                            const Icon = social.icon;
-                            return (
-                                <a
-                                    key={idx}
-                                    href={social.href}
-                                    target={social.href.startsWith('mailto') ? undefined : '_blank'}
-                                    rel="noopener noreferrer"
-                                    className="p-2 rounded-lg bg-white/[0.03] border border-white/[0.05] text-text-muted hover:text-accent hover:border-accent/30 hover:bg-accent/[0.06] transition-all duration-300"
-                                >
-                                    <Icon size={14} />
-                                </a>
-                            );
-                        })}
+                    <div className="flex items-center gap-3">
+                        {/* Social Links */}
+                        <div className="flex gap-2">
+                            {heroData.socials.map((social, idx) => {
+                                const Icon = social.icon;
+                                return (
+                                    <a
+                                        key={idx}
+                                        href={social.href}
+                                        target={social.href.startsWith('mailto') ? undefined : '_blank'}
+                                        rel="noopener noreferrer"
+                                        className="p-1.5 rounded-lg text-[--text-muted] hover:text-[--accent] hover:bg-[--accent]/[0.06] transition-all duration-300"
+                                        aria-label={social.label}
+                                    >
+                                        <Icon size={14} />
+                                    </a>
+                                );
+                            })}
+                        </div>
+
+                        {/* Back to top */}
+                        <button
+                            onClick={() => scrollToSection('hero')}
+                            className="p-1.5 rounded-lg border border-white/[0.06] text-[--text-muted] hover:text-[--accent] hover:border-[--accent]/30 hover:bg-[--accent]/[0.04] transition-all duration-300"
+                            aria-label="Back to top"
+                        >
+                            <ArrowUp size={14} />
+                        </button>
                     </div>
                 </div>
             </div>
