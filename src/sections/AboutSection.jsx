@@ -234,7 +234,7 @@ const AboutSection = () => {
                                                 {item.role}
                                             </span>
                                             <span className="text-sm text-[var(--text-muted)]">
-                                                {' — '}
+                                                {' - '}
                                                 {item.org}
                                             </span>
                                         </div>

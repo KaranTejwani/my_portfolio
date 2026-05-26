@@ -28,7 +28,7 @@ export const navLinks = [
 export const heroData = {
     name: "Karan Kumar",
     roles: ["AI Research Engineer", "Deep Learning Engineer", "Full-Stack Developer", "Published Researcher"],
-    description: "Final year CS student at Sukkur IBA University, building at the intersection of Deep Learning, Explainable AI, and Neuroscience — from rigorous research to production systems.",
+    description: "CS graduate from Sukkur IBA University, building at the intersection of Deep Learning, Explainable AI, and Neuroscience - from rigorous research to production systems.",
     cvLink: "#",
     image: karanImg,
     stats: [
@@ -44,8 +44,8 @@ export const heroData = {
 };
 
 export const aboutData = {
-    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems — with two accepted publications at IEEE venues spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets with multiple preprocessing pipelines for real-time emotion recognition — culminating in a deployed mobile application that classifies emotions directly from brainwave signals.",
-    identity: "I don't just research — I ship. From a production healthcare platform to a bilingual transcription system deployed at the National Assembly of Pakistan, I build systems that take ideas from experiment to the real world.",
+    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with two accepted publications at IEEE venues spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets with multiple preprocessing pipelines for real-time emotion recognition - culminating in a deployed mobile application that classifies emotions directly from brainwave signals.",
+    identity: "I don't just research - I ship. From a production healthcare platform to a bilingual transcription system deployed at the National Assembly of Pakistan, I build systems that take ideas from experiment to the real world.",
     location: "Sukkur, Pakistan",
     interests: [
         { label: 'Deep Learning', icon: Brain },
@@ -72,7 +72,7 @@ export const aboutData = {
             category: 'scholarship',
         },
         {
-            id: 3, icon: BookOpen, title: 'IEEE EDUCON 2026 — Technical Reviewer',
+            id: 3, icon: BookOpen, title: 'IEEE EDUCON 2026 - Technical Reviewer',
             subtitle: 'Reviewed two research papers as an official reviewer for IEEE EDUCON 2026, a top education technology conference.',
             category: 'academic',
         },
@@ -95,13 +95,13 @@ export const experiences = [
     {
         id: 3, title: 'CS Society', role: 'PRC Lead',
         duration: 'Nov 2024 - Oct 2025', location: 'Sukkur IBA',
-        description: 'Led the Programming Resource Centre — organizing coding sessions, technical events, and peer mentorship programs for 200+ students.',
+        description: 'Led the Programming Resource Centre - organizing coding sessions, technical events, and peer mentorship programs for 200+ students.',
         highlights: ['Leadership', 'Events', 'Mentorship'], current: false,
     },
     {
         id: 4, title: 'NEP NIC Sukkur', role: 'Incubatee (Simper AI)',
         duration: 'May 2024 - Aug 2024', location: 'Sukkur',
-        description: 'Incubated Simper AI — an NLP-powered intelligent examination system — through a nationally recognized startup incubation program.',
+        description: 'Incubated Simper AI - an NLP-powered intelligent examination system - through a nationally recognized startup incubation program.',
         highlights: ['Startup', 'Product Development', 'NLP'], current: false,
     },
 ];
@@ -115,19 +115,19 @@ export const projectsData = [
     },
     {
         id: 2, category: 'web', meta: 'Web App', title: 'Healr',
-        description: 'A full-stack healthcare platform to search FDA-approved medicines, book lab tests, and consult doctors — built and deployed end-to-end.',
+        description: 'A full-stack healthcare platform to search FDA-approved medicines, book lab tests, and consult doctors - built and deployed end-to-end.',
         tags: ['React', 'Node.js', 'Express.js', 'MongoDB'], link: 'https://github.com/KaranTejwani/healr',
         image: healrImg, featured: true,
     },
     {
         id: 3, category: 'ai', meta: 'Startup', title: 'Simper AI',
-        description: 'AI-based EdTech startup automating exam paper generation and NLP-powered answer grading — incubated at NEP NIC Sukkur.',
+        description: 'AI-based EdTech startup automating exam paper generation and NLP-powered answer grading - incubated at NEP NIC Sukkur.',
         tags: ['React', 'Python', 'NLP', 'OpenAI'], link: 'https://github.com/KaranTejwani',
         image: simperImg, featured: true,
     },
     {
         id: 4, category: 'web', meta: 'Web App', title: 'Bilingual Transcription System',
-        description: 'Production-grade bilingual speech-to-text system built with OpenAI Whisper — deployed at the National Assembly of Pakistan for internal use.',
+        description: 'Production-grade bilingual speech-to-text system built with OpenAI Whisper - deployed at the National Assembly of Pakistan for internal use.',
         tags: ['React', 'Flask', 'OpenAI Whisper', 'Production'], link: 'https://github.com/KaranTejwani/bilingual-transcriber',
         image: transcriberImg,
     },
