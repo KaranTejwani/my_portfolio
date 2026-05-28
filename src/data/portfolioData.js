@@ -11,6 +11,7 @@ import findItImg from '../assets/findit_2.jpg';
 import digitRecImg from '../assets/handwritten_digit_recognition.png';
 import gestureImg from '../assets/gestureDetector.png';
 import dataAnalysisImg from '../assets/DataAnalysis.png';
+import image_manipulationImg from '../assets/image_manipulation.png';
 
 // Conference Logos
 import educonLogo from '../assets/educon_logo.png';
@@ -126,37 +127,43 @@ export const projectsData = [
         image: simperImg, featured: true,
     },
     {
-        id: 4, category: 'web', meta: 'Web App', title: 'Bilingual Transcription System',
+        id: 4, category: 'ai', meta: 'Computer Vision', title: 'Image Manipulation Detection and Segmentation',
+        description: 'Computer Vision based forensic suite detecting image tampering, forgery & manipulation using dual deep learning models for classification & segmentation.',
+        tags: ['Python', 'TensorFlow', 'Computer Vision', 'Image Segmentation'], link: 'https://github.com/KaranTejwani/image-manipulation-segmentation',
+        image: image_manipulationImg,
+    },
+    {
+        id: 5, category: 'web', meta: 'Web App', title: 'Bilingual Transcription System',
         description: 'Production-grade bilingual speech-to-text system built with OpenAI Whisper - deployed at the National Assembly of Pakistan for internal use.',
         tags: ['React', 'Flask', 'OpenAI Whisper', 'Production'], link: 'https://github.com/KaranTejwani/bilingual-transcriber',
         image: transcriberImg,
     },
     {
-        id: 5, category: 'other', meta: 'Desktop', title: 'ChatMate',
+        id: 6, category: 'other', meta: 'Desktop', title: 'ChatMate',
         description: 'Local network chat application with real-time socket programming and user authentication.',
         tags: ['Java', 'MySQL'], link: 'https://github.com/KaranTejwani/ChatMate',
         image: chatMateImg,
     },
     {
-        id: 6, category: 'mobile', meta: 'Mobile', title: 'FindIt',
+        id: 7, category: 'mobile', meta: 'Mobile', title: 'FindIt',
         description: 'Community-driven lost and found mobile application.',
         tags: ['Flutter', 'Firebase'], link: 'https://github.com/KaranTejwani/finddd',
         image: findItImg,
     },
     {
-        id: 7, category: 'ai', meta: 'Computer Vision', title: 'Digit Recognition',
+        id: 8, category: 'ai', meta: 'Computer Vision', title: 'Digit Recognition',
         description: 'Deep learning model for handwritten digit recognition using convolutional neural networks.',
         tags: ['Python', 'TensorFlow', 'CNNs'], link: 'https://github.com/KaranTejwani/Handwritten_Digit_Recognition',
         image: digitRecImg,
     },
     {
-        id: 8, category: 'ai', meta: 'HCI', title: 'Gesture Detector',
+        id: 9, category: 'ai', meta: 'HCI', title: 'Gesture Detector',
         description: 'Real-time hand gesture recognition system using webcam and computer vision.',
         tags: ['OpenCV', 'Python'], link: 'https://github.com/KaranTejwani/GestureDetection',
         image: gestureImg,
     },
     {
-        id: 9, category: 'other', meta: 'Data Analysis', title: 'Spotify Data Analysis',
+        id: 10, category: 'other', meta: 'Data Analysis', title: 'Spotify Data Analysis',
         description: 'Exploratory data analysis and insights extracted from the Spotify 2024 dataset.',
         tags: ['Python', 'Pandas', 'Data Visualization'], link: 'https://github.com/KaranTejwani/DataAnalysis',
         image: dataAnalysisImg,
