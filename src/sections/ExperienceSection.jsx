@@ -15,7 +15,7 @@ const ExperienceSection = () => {
                         My <span className="text-gradient">Experience</span>
                     </h2>
                     <p className="text-text-secondary text-sm max-w-lg mx-auto">
-                        My professional journey — from research labs to production systems
+                        My professional journey - from research labs to production systems
                     </p>
                 </SectionReveal>
 
