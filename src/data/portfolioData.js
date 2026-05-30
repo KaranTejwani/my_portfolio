@@ -172,7 +172,7 @@ export const projectsData = [
 
 export const publicationsData = [
     {
-        id: 1, status: 'Accepted', venue: 'IEEE EDUCON 2026',
+        id: 1, status: 'Presented', venue: 'IEEE EDUCON 2026',
         title: 'From Feedback to Insight: Leveraging Transformers and Explainable AI to Identify Helpful Student Reviews',
         authors: ['Zenun Kastrati', 'Dani Bux Shah', 'Sher Muhammad Daudpota', 'Ali Shariq Imran', 'Karan Kumar'],
         topics: ['Transformers', 'Explainable AI', 'NLP', 'EdTech'],
@@ -180,7 +180,7 @@ export const publicationsData = [
         logo: educonLogo,
     },
     {
-        id: 2, status: 'Accepted', venue: 'IEEE iCoMET 2026',
+        id: 2, status: 'Presented', venue: 'IEEE iCoMET 2026',
         title: 'Analyzing the Classification-Localization Gap Between Convolutional Neural Networks and Vision Transformers for Image Manipulation Detection',
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'Vision Transformers', 'Explainable AI', 'Computer Vision'],
