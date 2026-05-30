@@ -17,6 +17,9 @@ import image_manipulationImg from '../assets/image_manipulation.png';
 import educonLogo from '../assets/educon_logo.png';
 import icometLogo from '../assets/iCoMET_logo.png';
 
+// CV
+import cvFile from '../assets/CV.pdf';
+
 export const navLinks = [
     { label: 'Home', href: '#hero' },
     { label: 'About', href: '#about' },
@@ -30,7 +33,7 @@ export const heroData = {
     name: "Karan Kumar",
     roles: ["AI Research Engineer", "Deep Learning Engineer", "Full-Stack Developer", "Published Researcher"],
     description: "CS graduate from Sukkur IBA University, building at the intersection of Deep Learning, Explainable AI, and Neuroscience - from rigorous research to production systems.",
-    cvLink: "#",
+    cvLink: cvFile,
     image: karanImg,
     stats: [
         { label: 'Publications', value: '2' },
