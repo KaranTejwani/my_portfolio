@@ -48,7 +48,7 @@ export const heroData = {
 };
 
 export const aboutData = {
-    bio: "I'm Karan Kumar, a final-year Computer Science student and AI Research Engineer focused on building explainable and trustworthy AI systems - with two accepted publications at IEEE venues spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets with multiple preprocessing pipelines for real-time emotion recognition - culminating in a deployed mobile application that classifies emotions directly from brainwave signals.",
+    bio: "I'm Karan Kumar, an AI Research Engineer focused on building explainable and trustworthy AI systems - with two accepted publications at IEEE venues spanning Transformers, Computer Vision, and XAI. My final year project, NeuroEmotion, benchmarked 18 deep learning models across two officially acquired EEG datasets with multiple preprocessing pipelines for real-time emotion recognition - culminating in a deployed mobile application that classifies emotions directly from brainwave signals.",
     identity: "I don't just research - I ship. From a production healthcare platform to a bilingual transcription system deployed at the National Assembly of Pakistan, I build systems that take ideas from experiment to the real world.",
     location: "Sukkur, Pakistan",
     interests: [
