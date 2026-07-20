@@ -180,6 +180,7 @@ export const publicationsData = [
         authors: ['Zenun Kastrati', 'Dani Bux Shah', 'Sher Muhammad Daudpota', 'Ali Shariq Imran', 'Karan Kumar'],
         topics: ['Transformers', 'Explainable AI', 'NLP', 'EdTech'],
         githubUrl: 'https://github.com/KaranTejwani',
+        publicationUrl: 'https://ieeexplore.ieee.org/document/11574470/',
         logo: educonLogo,
     },
     {
@@ -188,6 +189,7 @@ export const publicationsData = [
         authors: ['Karan Kumar', 'Kirti Kour'],
         topics: ['CNNs', 'Vision Transformers', 'Explainable AI', 'Computer Vision'],
         githubUrl: 'https://github.com/KaranTejwani',
+        publicationUrl: 'https://ieeexplore.ieee.org/document/11592040/',
         logo: icometLogo,
     },
 ];

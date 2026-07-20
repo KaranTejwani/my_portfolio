@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, FileText, Users, Clock } from 'lucide-react';
+import { Github, FileText, Users, Clock, ExternalLink } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal';
 import { publicationsData } from '../data/portfolioData';
 
@@ -113,15 +113,38 @@ const ResearchSection = () => {
                                         ))}
                                     </div>
 
-                                    <a
-                                        href={pub.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-text-secondary text-xs font-medium hover:text-accent hover:border-accent/30 transition-all duration-300"
-                                    >
-                                        <Github size={14} />
-                                        View Code
-                                    </a>
+                                    <div className="flex gap-2">
+                                        {pub.publicationUrl && pub.publicationUrl !== '#' && (
+                                            <a
+                                                href={pub.publicationUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-text-secondary text-xs font-medium hover:text-accent hover:border-accent/30 transition-all duration-300"
+                                            >
+                                                <ExternalLink size={14} />
+                                                Paper
+                                            </a>
+                                        )}
+                                        {pub.publicationUrl === '#' && (
+                                            <a
+                                                href={pub.publicationUrl}
+                                                onClick={(e) => e.preventDefault()}
+                                                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-text-secondary text-xs font-medium hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-not-allowed opacity-70 title='Link coming soon'"
+                                            >
+                                                <ExternalLink size={14} />
+                                                Paper
+                                            </a>
+                                        )}
+                                        <a
+                                            href={pub.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-text-secondary text-xs font-medium hover:text-accent hover:border-accent/30 transition-all duration-300"
+                                        >
+                                            <Github size={14} />
+                                            View Code
+                                        </a>
+                                    </div>
                                 </div>
                             </motion.div>
                         </SectionReveal>
